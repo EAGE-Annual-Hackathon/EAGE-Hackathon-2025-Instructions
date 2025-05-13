@@ -33,4 +33,4 @@ jobs:
 
       - name: Deploy model endpoints
         run: |
-          uv run modal deploy mcp_servers.py
+          uv run modal deploy modal_mcp_servers.py
