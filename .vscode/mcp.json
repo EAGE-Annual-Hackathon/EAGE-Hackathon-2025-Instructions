@@ -2,8 +2,11 @@
     "servers": {
         "HelloWorldMCP": {
             "type": "sse",
-            "url": "http://127.0.0.1:9000/hello_world_mcp",
-            "headers": {}
+            "url": "http://127.0.0.1:9000/hello_world_mcp"
+        },
+        "HelloWorldMCPModal": {
+            "type": "sse",
+            "url": "https://lukasmosser--eage-annual-20250mcp-server-mcp-server.modal.run/sse"
         }
     }
 }
