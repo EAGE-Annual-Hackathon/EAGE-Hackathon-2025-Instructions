@@ -1,0 +1,18 @@
+[project]
+name = "eage-annual-2025-hackathon"
+version = "0.1.0"
+description = "EAGE Annual 2025 Hackathon code"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["hello_world_mcp"]
+
+[tool.uv.sources]
+hello_world_mcp = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "hello_world_mcp",
+]

@@ -1,0 +1,16 @@
+[project]
+name = "hello_world_mcp"
+version = "0.1.0"
+description = "Hello World MCP Endpoint"
+requires-python = ">=3.11"
+
+dependencies = [
+    "fastmcp >= 2.3.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hello_world_mcp/hello_world_mcp"]

@@ -1,0 +1,9 @@
+{
+    "servers": {
+        "HelloWorldMCP": {
+            "type": "sse",
+            "url": "http://127.0.0.1:9000/hello_world_mcp",
+            "headers": {}
+        }
+    }
+}

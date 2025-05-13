@@ -1,0 +1,7 @@
+services:
+  hello_world_mcp:
+    build:
+      context: .
+      dockerfile: hello_world_mcp/Dockerfile
+    ports:
+      - "9000:9000"
