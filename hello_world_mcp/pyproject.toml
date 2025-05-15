@@ -6,6 +6,8 @@ requires-python = ">=3.11"
 
 dependencies = [
     "fastmcp >= 2.3.0",
+    "matplotlib>=3.10.3",
+    "segyio>=1.9.13",
 ]
 
 [build-system]

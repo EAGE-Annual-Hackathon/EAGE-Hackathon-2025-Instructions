@@ -53,4 +53,13 @@ This will deploy the MCP servers to Modal. You can then access the servers from 
 ## Integrating the MCP Servers
 Navigate to `.vscode/mcp.json` once the server is running and click on `Start` for the HelloWorldMCP to start the MCP server. 
 
+## Interacting with the MCP Server
+
+### Github Copilot
 Go to your Github Copilot window, activate `Ask`-mode and add the tool into your context, or when in `Agent`-mode add the tool through the MCP configuration in the lower left corner. 
+
+### Cursor IDE
+You can also run the example in other IDEs like cursor, but you will have to activate one of the claude models to be able to interact with the returned images.
+
+Run a prompt like "plot an inline of the sgy file and return it as a jpeg of the figure" - you will then see an example like this.
+![F3 Test](f3_test_cursor.jpg)    
