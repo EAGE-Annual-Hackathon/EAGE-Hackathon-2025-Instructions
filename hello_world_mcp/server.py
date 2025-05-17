@@ -4,6 +4,7 @@ from starlette.responses import JSONResponse
 from segyio.tools import cube
 import matplotlib.pyplot as plt
 import tempfile
+import os
 
 mcp = FastMCP(name="HelloWorldMCP",
     instructions="""
@@ -18,12 +19,14 @@ def hello_world(name: str) -> str:
 @mcp.tool()
 def show_mona_lisa() -> Image:
     """Returns the Mona Lisa image."""
-    return Image(path="/root/hello_world_mcp/mona_lisa.JPG")
+    image_path = os.path.join(os.path.dirname(__file__), "mona_lisa.JPG")
+    return Image(path=image_path)
 
 @mcp.tool()
 def fetch_F3() -> Image:
     """Fetches the F3 8-bit int data and returns the first inline as a JPEG image."""
-    data = cube("/root/hello_world_mcp/F3_8-bit_int.sgy")
+    segy_path = os.path.join(os.path.dirname(__file__), "F3_8-bit_int.sgy")
+    data = cube(segy_path)
     # data shape: (iline, xline, samples)
     # Select the first inline
     inline = data[0, :, :]
