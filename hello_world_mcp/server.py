@@ -31,7 +31,8 @@ def fetch_F3() -> Image:
     with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as tmpfile:
         plt.figure(figsize=(8, 6))
         plt.imshow(inline.T, aspect='auto', cmap='gray')
-        plt.title("First Inline of F3.sgy")
+        # Title uses the correct filename of the SEG-Y file
+        plt.title("First Inline of F3_8-bit_int.sgy")
         plt.xlabel("Xline")
         plt.ylabel("Samples")
         plt.colorbar(label="Amplitude")
