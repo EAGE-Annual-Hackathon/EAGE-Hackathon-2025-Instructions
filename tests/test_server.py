@@ -21,8 +21,8 @@ def test_show_mona_lisa():
 
 def test_fetch_F3(monkeypatch):
     local_sgy = (
-             Path(__file__).resolve().parents[1] / "hello_world_mcp" / "F3_8-bit_int.sgy"
-         )
+        Path(__file__).resolve().parents[1] / "hello_world_mcp" / "F3_8-bit_int.sgy"
+    )
     def cube_wrapper(path):
         assert path == "/root/hello_world_mcp/F3_8-bit_int.sgy"
         import segyio.tools as tools
