@@ -6,7 +6,7 @@
         },
         "HelloWorldMCPModal": {
             "type": "sse",
-            "url": "https://lukasmosser--eage-annual-20250mcp-server-mcp-server.modal.run/hello_world_mcp/"
+            "url": "https://lukasmosser--eage-annual-2025-mcp-server-mcp-server.modal.run/hello_world_mcp/"
         }
     }
 }
