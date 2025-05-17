@@ -18,4 +18,21 @@ hello_world_mcp = { workspace = true }
 dev = [
     "hello_world_mcp",
     "pytest>=8.2.0",
+    "black>=24.4.2",
+    "isort>=5.13.2",
+    "ruff>=0.4.4",
+    "pre-commit>=3.7.1",
 ]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+extend-select = ["I"]
