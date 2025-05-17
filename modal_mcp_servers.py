@@ -1,6 +1,6 @@
 import modal
 
-app = modal.App("eage-annual-20250mcp-server")
+app = modal.App("eage-annual-2025-mcp-server")
 
 
 
