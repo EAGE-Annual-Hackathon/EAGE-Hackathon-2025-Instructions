@@ -63,3 +63,20 @@ You can also run the example in other IDEs like cursor, but you will have to act
 
 Run a prompt like "plot an inline of the sgy file and return it as a jpeg of the figure" - you will then see an example like this.
 ![F3 Test](f3_test_cursor.jpg)    
+
+
+## Development setup
+
+To run the test suite and work on the project, create a virtual environment and install the development dependencies managed by `uv`.
+
+```bash
+uv venv .venv            # create a virtual environment in `.venv`
+source .venv/bin/activate
+uv sync --group dev      # install packages from the `dev` dependency group
+```
+
+Once the packages are installed you can run the tests:
+
+```bash
+.venv/bin/pytest -q
+```
