@@ -17,4 +17,5 @@ hello_world_mcp = { workspace = true }
 [dependency-groups]
 dev = [
     "hello_world_mcp",
+    "pytest>=8.2.0",
 ]
