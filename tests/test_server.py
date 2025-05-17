@@ -6,6 +6,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from hello_world_mcp.server import hello_world, show_mona_lisa, fetch_F3, mcp
 from starlette.testclient import TestClient
 
+
 def test_hello_world():
     assert hello_world('Alice') == "Hello World, Alice!"
 

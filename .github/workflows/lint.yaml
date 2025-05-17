@@ -1,18 +1,13 @@
-name: Deploy Model Endpoints
+name: Lint
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
 
 jobs:
-  deploy:
-    name: Deploy
+  lint:
     runs-on: ubuntu-latest
-    env:
-      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
-      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -20,7 +15,6 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v4
         with:
-          # Install a specific version of uv.
           version: "0.5.11"
 
       - name: "Set up Python"
@@ -28,9 +22,8 @@ jobs:
         with:
           python-version-file: "pyproject.toml"
 
-      - name: Install the project
+      - name: Install dependencies
         run: uv sync --all-extras --dev
 
-      - name: Deploy model endpoints
-        run: |
-          uv run modal deploy modal_mcp_servers.py
+      - name: Run pre-commit
+        run: uv run pre-commit run --all-files --show-diff-on-failure
