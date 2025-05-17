@@ -12,7 +12,7 @@ mcp = FastMCP(name="HelloWorldMCP",
 
 @mcp.tool()
 def hello_world(name: str) -> str:
-    """Greet a user Hellow World!"""
+    """Greet a user Hello World!"""
     return f"Hello World, {name}!"
 
 @mcp.tool()
