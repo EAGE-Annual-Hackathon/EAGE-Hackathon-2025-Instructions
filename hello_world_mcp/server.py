@@ -60,5 +60,5 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=9000,
         log_level="debug",
-        path="hello_world_mcp",
+        path="/hello_world_mcp",
     )
