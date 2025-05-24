@@ -70,6 +70,14 @@ uv run modal deploy modal_mcp_servers.py
 ```
 This will deploy the MCP servers to Modal. You can then access the servers from your local machine.
 
+## Deploying the Ollama server to Modal (Optional)
+The Ollama server allows you to run open-source LLMs in the cloud. To deploy the
+server you need to have the `uv` command line tool installed.
+```bash
+uv run modal deploy modal_ollama_serving.py
+```
+This will deploy the Ollama server to Modal so you can access it from a persistent endpoint.
+
 ## Development setup
 
 To run the test suite and work on the project, create a virtual environment and install the development dependencies managed by `uv`.
