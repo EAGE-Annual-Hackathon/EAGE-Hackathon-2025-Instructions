@@ -16,10 +16,22 @@ The MCP (Model-Context Protocol) is a protocol that allows LLM Clients such as G
 - **Documentation**: Is the tool well documented? Is it easy to understand how to use it?
 - **Code Quality**: Is the code well written? Is it easy to understand and maintain?
 
+## Getting Setup (do this before the hackathon ideally): 
+
+Please install Microsoft Visual Studio Code Insiders (we need this for the latest MCP features):
+- https://code.visualstudio.com/insiders/
+
+Make sure to install the `uv` package manager (think Anaconda but much faster): 
+- https://docs.astral.sh/uv/#installation
+
+If possible also install Docker Desktop or Podman: 
+- https://www.docker.com/products/docker-desktop/
+- https://podman.io/
+
 ## Installing the MCP servers (command line)
 To install the MCP server you first need to install the `uv` command line tool. This is a command line tool that allows you to run the MCP servers locally.
 
-### Install `uv` command line tool
+### Install `uv` command line tool (Skip if already installed)
 The `uv` command line tool is available for Windows, Linux and MacOS.
 ```bash
 # Install uv (windows)
@@ -42,14 +54,6 @@ To run the MCP servers from command line:
 docker compose up
 ```
 
-## Deploying the MCP servers to Modal
-The MCP servers can also be deployed to Modal. This allows you to run the servers in the cloud and access them from anywhere.
-To deploy the MCP servers you need to have the `uv` command line tool installed.
-```bash
-uv run modal deploy modal_mcp_servers.py
-```
-This will deploy the MCP servers to Modal. You can then access the servers from your local machine.
-
 ## Integrating the MCP Servers
 Navigate to `.vscode/mcp.json` once the server is running and click on `Start` for the HelloWorldMCP to start the MCP server. 
 
@@ -58,12 +62,21 @@ Navigate to `.vscode/mcp.json` once the server is running and click on `Start` f
 ### Github Copilot
 Go to your Github Copilot window, activate `Ask`-mode and add the tool into your context, or when in `Agent`-mode add the tool through the MCP configuration in the lower left corner. 
 
-### Cursor IDE
-You can also run the example in other IDEs like cursor, but you will have to activate one of the claude models to be able to interact with the returned images.
+## Deploying the MCP servers to Modal (Optional)
+The MCP servers can also be deployed to Modal. This allows you to run the servers in the cloud and access them from anywhere.
+To deploy the MCP servers you need to have the `uv` command line tool installed.
+```bash
+uv run modal deploy modal_mcp_servers.py
+```
+This will deploy the MCP servers to Modal. You can then access the servers from your local machine.
 
-Run a prompt like "plot an inline of the sgy file and return it as a jpeg of the figure" - you will then see an example like this.
-![F3 Test](f3_test_cursor.jpg)    
-
+## Deploying the Ollama server to Modal (Optional)
+The Ollama server allows you to run open-source LLMs in the cloud. To deploy the
+server you need to have the `uv` command line tool installed.
+```bash
+uv run modal deploy modal_ollama_serving.py
+```
+This will deploy the Ollama server to Modal so you can access it from a persistent endpoint.
 
 ## Development setup
 
@@ -80,3 +93,17 @@ Once the packages are installed you can run the tests:
 ```bash
 .venv/bin/pytest -q
 ```
+
+## Connecting to the OLLAMA Server
+
+Use the following to create a client that connects to the hosted Ollama server:
+```python
+import openai
+
+client = openai.AsyncOpenAI(
+            base_url="https://lukasmosser--ollama-server-ollamaserver-serve.modal.run/v1",
+            api_key="not-needed",  # Ollama doesn't require API keys
+        )
+```
+make sure to use model_name="llama3.1:8b" when calling the openai chat completions endpoint.
+
