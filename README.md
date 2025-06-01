@@ -105,4 +105,5 @@ client = openai.AsyncOpenAI(
             api_key="not-needed",  # Ollama doesn't require API keys
         )
 ```
+make sure to use model_name="llama3.1:8b" when calling the openai chat completions endpoint.
 
