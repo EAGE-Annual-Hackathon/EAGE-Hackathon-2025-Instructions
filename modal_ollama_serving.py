@@ -30,8 +30,8 @@ MODEL_DIR = "/ollama_models"
 
 # Define the models we want to work with
 # You can specify different model versions using the format "model:tag"
-MODELS_TO_DOWNLOAD = ["llama3:instruct"]  # Downloaded at startup
-MODELS_TO_TEST = ["llama3:instruct"]  # Tested in our example
+MODELS_TO_DOWNLOAD = ["llama3.1:8b"]  # Downloaded at startup
+MODELS_TO_TEST = ["llama3.1:8b"]  # Tested in our example
 
 # Ollama version to install - you may need to update this for the latest models
 OLLAMA_VERSION = "0.6.5"
