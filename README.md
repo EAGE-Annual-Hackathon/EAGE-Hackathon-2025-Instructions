@@ -93,3 +93,16 @@ Once the packages are installed you can run the tests:
 ```bash
 .venv/bin/pytest -q
 ```
+
+## Connecting to the OLLAMA Server
+
+Use the following to create a client that connects to the hosted Ollama server:
+```python
+import openai
+
+client = openai.AsyncOpenAI(
+            base_url="https://lukasmosser--ollama-server-ollamaserver-serve.modal.run/v1",
+            api_key="not-needed",  # Ollama doesn't require API keys
+        )
+```
+
